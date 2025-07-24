@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100vw;
+  height: 50vh;
+  justify-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  width: 300px;
+  height: 100px;
+  background-color: white;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.71);
+  border-radius: 8px;
+  --scale-increment: 0.05;
+  --translate-increment: -16%;
+  transform: scale(calc(1 - var(--index) * var(--scale-increment)))
+    translateY(calc(var(--index) * var(--translate-increment)));
+}
+
+.box-inner {
+  height: 56px;
+  width: 56px;
+  background-color: yellow;
+  border-radius: 50%;
+  transition: transform 0.6s ease;
+}
+
+.box:hover .box-inner {
+  transform: translateY(50%);
+}
